@@ -19,7 +19,7 @@ class ProcessManagerWebInterface:
         self.headless = headless
 
         if not self.headless:
-            static_dir = toabs(__file__, "../frontend")
+            static_dir = toabs(__file__, "./frontend")
             self.app.mount(
                 "/static",
                 StaticFiles(directory=static_dir),
@@ -144,7 +144,7 @@ class ProcessManagerWebInterface:
 
             @self.app.get("/")
             def serve_index():
-                index_file = toabs(__file__, "../frontend/index.html")
+                index_file = toabs(__file__, "./frontend/index.html")
                 return FileResponse(index_file)
 
     def run(self, host="localhost", port=5555, debug=True):
