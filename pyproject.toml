@@ -1,0 +1,37 @@
+[build-system]
+requires = [
+    "build>=1.2.2.post1",
+    "setuptools>=75.1.0",
+    "python-dateutil>=2.9.0.post0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proman"
+version = "0.0.1"
+description = "A programmer-friendly python process manager"
+requires-python = ">=3.7"
+dependencies = [
+    "fastapi>=0.70.0",
+    "uvicorn>=0.15.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ipython>=8.15.0",
+    "pytest>=8.2.2",
+    "coverage>=7.3.2",
+    "black>=23.3.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["proman*"]
+
+
+[tool.setuptools.package-data]
+"proman" = ["../frontend/"]
+
+[project.scripts]
+proman = "proman.cli:main"
