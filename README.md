@@ -1,12 +1,12 @@
 ![Proman Logo](./assets/logo.jpg)
 
-# Proman - A developer firendly PROcess MANager
+# Proman - A developer friendly PROcess MANager
 
 Proman is a programmer-friendly, extensible process manager written in Python. It is designed to work on any operating system and provides a unified interface for managing processes in your projects. With Proman, you can define, monitor, and control your processes using a YAML configuration file, a command-line interface (CLI), or a web-based dashboard.
 
 ## Table of Contents
 
-- [Proman - A developer firendly PROcess MANager](#proman---a-developer-firendly-process-manager)
+- [Proman - A developer friendly PROcess MANager](#proman---a-developer-friendly-process-manager)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Installation](#installation)
