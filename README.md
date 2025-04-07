@@ -42,7 +42,7 @@ Proman requires Python 3.6 or higher.
 If Proman is published on PyPI, install it with:
 
 ```bash
-pip install proman
+pip install py-proman
 ```
 
 ### From Source
