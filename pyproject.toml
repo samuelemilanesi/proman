@@ -1,5 +1,5 @@
 [project]
-name = "proman"
+name = "py-proman"
 version = "0.0.1"
 description = "A programmer-friendly python process manager"
 requires-python = ">=3.7"
