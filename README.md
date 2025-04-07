@@ -39,7 +39,7 @@ Proman requires Python 3.6 or higher.
 
 ### Using pip
 
-If Proman is published on PyPI, install it with:
+Install the package published on PyPI with:
 
 ```bash
 pip install py-proman
@@ -121,7 +121,7 @@ For more details, refer to the CLI implementation in [cli.py](./proman/cli.py).
 
 When not in headless mode, Proman launches a web dashboard powered by FastAPI ([server.py](./proman/server.py)).
 
-- **Dashboard URL:** By default, the dashboard is accessible at `http://localhost:5678` (or at the host/port you specify).
+- **Dashboard URL:** By default, the dashboard is accessible at `http://localhost:5678` (or at the `--host` and  `--port` you specify).
 - **Features:**
   - View current status of all registered processes.
   - Start or stop individual processes via the provided buttons.
@@ -130,6 +130,11 @@ When not in headless mode, Proman launches a web dashboard powered by FastAPI ([
 ## Extending Proman
 
 Proman is designed with extensibility in mind. You can create custom process classes by subclassing the base `Process` class (defined in [processes.py](./proman/processes.py)).
+Extension classes must define the methods:
+- `initialize`: defining what parameters to read from the config
+- `start`: code to execute to start the service (e.g. as a subprocess)
+- `stop`: code to terminate a running service
+- `describe`: returning a dictionary with the all important parametes of the service that will be shown as a table in the dropdown of the UI
 
 ### Creating a Custom Process
 
