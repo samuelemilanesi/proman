@@ -18,7 +18,19 @@ class StreamlitProcess(Process):
 
     def start(self):
         executable = self.interpreter_path
-        cmd = f"{executable} -m streamlit run {self.target} --server.port {self.port} --server.address {self.host} --server.headless true"
+        cmd = [
+            executable,
+            "-m",
+            "streamlit",
+            "run",
+            self.target,
+            "--server.port",
+            str(self.port),
+            "--server.address",
+            self.host,
+            "--server.headless",
+            "true",
+        ]
         self.process = subprocess.Popen(cmd)
 
     def stop(self):
